@@ -1,0 +1,17 @@
+{% extends "app/base.html" %}
+{% block content %}
+    {% for ticket in tickets %}
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="#">{{ ticket.movieName }}</a>
+            </div>
+            <h2><a class="article-title" href="{% url 'tickets' %}">Ime filma: {{ ticket.movieName }}</a></h2>
+            <p class="article-content">Ime kupca: {{ ticket.customer }}</p>
+            <p class="article-content">Broj kupljenih karata: {{ ticket.seatNumber }}</p>
+          </div>
+        </article>
+    {% endfor %}
+{% endblock content %}
+
+    

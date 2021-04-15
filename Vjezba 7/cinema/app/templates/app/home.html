@@ -1,0 +1,15 @@
+{% extends "app/base.html" %}
+{% block content %}
+    {% for projection in projections %}
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="#">{{ projection.movieName }}</a>
+            </div>
+            <h2><a class="article-title" href="{% url 'projection-detail' projection.id%}">{{ projection.movieName }}</a></h2>
+            <p class="article-content">Kapacitet dvorane: {{ projection.cinemaHallCapacity }}</p>
+            <p class="article-content">Vrijeme trajanja filma: {{ projection.screeningTime }}min</p>
+          </div>
+        </article>
+    {% endfor %}
+{% endblock content %}

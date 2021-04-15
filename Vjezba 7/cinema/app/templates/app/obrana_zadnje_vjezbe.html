@@ -1,0 +1,16 @@
+{% extends "app/base.html" %}
+{% block content %}
+
+    {% for ticket in tickets %}
+
+        {% if ticket.status %}
+        <h3>gold:</h3>
+            {{ticket}}
+        {% else %}
+        <h3>silver:</h3>
+            {{ticket}}
+        {%endif%}
+
+    {% endfor %}
+
+{% endblock content %}
